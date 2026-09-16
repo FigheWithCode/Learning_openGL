@@ -1,0 +1,7 @@
+#version 330 core
+in vec3 ourColor;
+uniform vec3 changeBlue;
+out vec4 fragColor;
+void main(){
+    fragColor = vec4(ourColor.x,ourColor.y,abs(ourColor.z+changeBlue.z),1.0);
+}
