@@ -1,0 +1,2 @@
+# Learning_openGL
+这是用来记录我学习opengl的过程所创建的仓库
