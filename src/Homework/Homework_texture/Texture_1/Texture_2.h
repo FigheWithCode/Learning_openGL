@@ -53,6 +53,8 @@ public:
         glAttachShader(ID,fragment);
         glLinkProgram(ID);
         Check(ID,"program");
+        glDeleteShader(vertex);
+        glDeleteShader(fragment);
 
 
     }
@@ -63,6 +65,10 @@ public:
 
     void setInt(std::string name,int value) const{
         glUniform1i(glGetUniformLocation(ID,name.c_str()),value);
+    }
+
+    void SetFloat(std::string name,float value) const {
+        glUniform1f(glGetUniformLocation(ID,name.c_str()),value);
     }
 
 private:
