@@ -174,3 +174,18 @@ target_link_libraries(Texture_Learn PRIVATE
         glfw
         OpenGL::GL
 )
+
+add_executable(Texture_Homework_1
+        src/Homework/Homework_texture/Texture_1/texture_2.cpp
+        src/Homework/Homework_texture/Texture_1/Texture_2.h
+        third_party/glad/src/glad.c
+)
+target_include_directories(Texture_Homework_1 PRIVATE
+        src/Homework/Homework_texture
+        third_party/glad/include
+        third_party/stb
+)
+target_link_libraries(Texture_Homework_1 PRIVATE
+        glfw
+        OpenGL::GL
+)
