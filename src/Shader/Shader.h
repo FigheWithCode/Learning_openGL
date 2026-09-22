@@ -24,7 +24,7 @@ public:
 
         try {
             vertexFile.open(vertexPath);
-            fragmentFile.open(vertexPath);
+            fragmentFile.open(fragmentPath);
 
             std::stringstream vShaderStream, fShaderStream;
             vShaderStream<<vertexFile.rdbuf();
@@ -42,11 +42,11 @@ public:
 
         unsigned int vertex,fragment;
         vertex=glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vertex,1,&vertexSource,NULL);
+        glShaderSource(vertex,1,&vShaderSource,NULL);
         glCompileShader(vertex);
         Check(vertex,"vertex");
         fragment=glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fragment,1,&fragmentSource,NULL);
+        glShaderSource(fragment,1,&fShaderSource,NULL);
         glCompileShader(fragment);
         Check(fragment,"fragment");
 
@@ -64,10 +64,10 @@ public:
     }
 
     void setInt(const char* name, int value) const {
-        glUniform1i(glGetUniformLocation(ID,name.c_str()),value);
+        glUniform1i(glGetUniformLocation(ID,name),value);
     }
     void SetFloat(const char* name, float value) const {
-        glUniform1f(glGetUniformLocation(ID,name.c_str()),value);
+        glUniform1f(glGetUniformLocation(ID,name),value);
     }
 
 private:

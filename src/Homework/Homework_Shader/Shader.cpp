@@ -62,7 +62,7 @@ int main() {
         float timeValue=glfwGetTime();
         float value = std::sin(timeValue);
         int location = glGetUniformLocation(shader.ID,"offset");
-        shader.use();
+        shader.Use();
         glUniform3f(location,value,0,0);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES,0,3);
