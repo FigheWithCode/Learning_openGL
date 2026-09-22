@@ -179,3 +179,19 @@ target_link_libraries(Texture_Homework_1 PRIVATE
         glfw
         OpenGL::GL
 )
+
+add_executable(Texture_Homework_2
+        src/Homework/Homework_texture/texture_2/Texture_3.cpp
+        src/Shader/Shader.h
+        third_party/glad/src/glad.c
+)
+target_include_directories(Texture_Homework_2 PRIVATE
+        src/Homework/Homework_texture/texture_2
+        third_party/glad/include
+        third_party/stb
+        src/Shader
+)
+target_link_libraries(Texture_Homework_2 PRIVATE
+        glfw
+        OpenGL::GL
+)
