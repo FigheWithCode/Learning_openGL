@@ -1,4 +1,4 @@
-#include "SHADER.h"
+#include "Shader.h"
 #include<iostream>
 #include<cmath>
 
@@ -41,7 +41,7 @@ int main() {
         0.f,1.f,1.f,
         -.5f,-1.f,1.f,
     };
-    SHADER shader("/home/Gal/Projects/learnopengl/src/Homework/Homework_Shader/vertexShader","/home/Gal/Projects/learnopengl/src/Homework/Homework_Shader/fragmentShader");
+    Shader shader("/home/Gal/Projects/learnopengl/src/Homework/Homework_Shader/vertexShader","/home/Gal/Projects/learnopengl/src/Homework/Homework_Shader/fragmentShader");
 
     unsigned int VAO,VBO;
     glGenVertexArrays(1, &VAO);

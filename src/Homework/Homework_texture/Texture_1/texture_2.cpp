@@ -1,7 +1,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include"stb_image.h"
 
-#include"Texture_2.h"
+#include"Shader.h"
 
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
@@ -19,7 +19,7 @@ void ProcIn(GLFWwindow* window) {
 }
 
 static float value = 0;
-void Texture_uper(Texture_2 &textures,GLFWwindow* window) {
+void Texture_uper(Shader &textures,GLFWwindow* window) {
     if (GLFW_PRESS == glfwGetKey(window,GLFW_KEY_UP) && value<=1) {
         textures.SetFloat("TexOffset",value+=.01);
     }
@@ -79,7 +79,7 @@ int main() {
     glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,8*sizeof(float),(void*)(6*sizeof(float)));
     glEnableVertexAttribArray(2);
 
-    Texture_2 texture("/home/Gal/Projects/learnopengl/src/Homework/Homework_texture/Texture_1/vertex","/home/Gal/Projects/learnopengl/src/Homework/Homework_texture/Texture_1/fragment");
+    Shader texture("/home/Gal/Projects/learnopengl/src/Homework/Homework_texture/Texture_1/vertex","/home/Gal/Projects/learnopengl/src/Homework/Homework_texture/Texture_1/fragment");
 
     stbi_set_flip_vertically_on_load(true);
     unsigned int textures[2];

@@ -118,28 +118,15 @@ target_link_libraries(Shader_more_conttrib PRIVATE
         OpenGL::GL
 )
 
-add_executable(Shader_Class
-        src/Shader_Class/SHADER_lAST.cpp
-        src/Shader_Class/SHADER.cpp
-        third_party/glad/src/glad.c
-)
-target_include_directories(Shader_Class PRIVATE
-        src/Shader_Class
-        third_party/glad/include
-)
-target_link_libraries(Shader_Class PRIVATE
-        glfw
-        OpenGL::GL
-)
-
 add_executable(HOMEWORK_SHADER
         src/Homework/Homework_Shader/Shader.cpp
-        src/Homework/Homework_Shader/SHADER.cpp
+        src/Shader/Shader.h
         third_party/glad/src/glad.c
 )
 target_include_directories(HOMEWORK_SHADER PRIVATE
         src/Homework/Homework_Shader
         third_party/glad/include
+        src/Shader
 )
 target_link_libraries(HOMEWORK_SHADER PRIVATE
         glfw
@@ -147,13 +134,14 @@ target_link_libraries(HOMEWORK_SHADER PRIVATE
 )
 
 add_executable(SHADER_EXERCISE_LAST
-        src/Exercise/Exercise_Shader/Exercise_Shader.cpp
+        src/Shader/Shader.h
         src/Exercise/Exercise_Shader/HOMEWORK_SHADER.cpp
         third_party/glad/src/glad.c
 )
 target_include_directories(SHADER_EXERCISE_LAST PRIVATE
         src/Exercise/Exercise_Shader
         third_party/glad/include
+        src/Shader
 )
 target_link_libraries(SHADER_EXERCISE_LAST PRIVATE
         glfw
@@ -162,13 +150,14 @@ target_link_libraries(SHADER_EXERCISE_LAST PRIVATE
 
 add_executable(Texture_Learn
         src/LearningTexture/Texture.cpp
-        src/LearningTexture/TEXTURES.cpp
+        src/Shader/Shader.h
         third_party/glad/src/glad.c
 )
 target_include_directories(Texture_Learn PRIVATE
         src/LearningTexture
         third_party/glad/include
         third_party/stb
+        src/Shader
 )
 target_link_libraries(Texture_Learn PRIVATE
         glfw
@@ -177,13 +166,14 @@ target_link_libraries(Texture_Learn PRIVATE
 
 add_executable(Texture_Homework_1
         src/Homework/Homework_texture/Texture_1/texture_2.cpp
-        src/Homework/Homework_texture/Texture_1/Texture_2.h
+        src/Shader/Shader.h
         third_party/glad/src/glad.c
 )
 target_include_directories(Texture_Homework_1 PRIVATE
         src/Homework/Homework_texture
         third_party/glad/include
         third_party/stb
+        src/Shader
 )
 target_link_libraries(Texture_Homework_1 PRIVATE
         glfw

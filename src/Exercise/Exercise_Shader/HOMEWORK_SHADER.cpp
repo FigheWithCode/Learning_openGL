@@ -1,4 +1,4 @@
-#include"Exercise_Shader.h"
+#include"Shader.h"
 
 #include<iostream>
 #include<cmath>
@@ -57,7 +57,7 @@ int main() {
     glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,6*sizeof(float),(void*)(3*sizeof(float)));
     glEnableVertexAttribArray(1);
 
-    Exercise_Shader Shader("/home/Gal/Projects/learnopengl/src/Exercise/Exercise_Shader/vertex","/home/Gal/Projects/learnopengl/src/Exercise/Exercise_Shader/fragment");
+    Shader Shader("/home/Gal/Projects/learnopengl/src/Exercise/Exercise_Shader/vertex","/home/Gal/Projects/learnopengl/src/Exercise/Exercise_Shader/fragment");
 
     while(!glfwWindowShouldClose(window)) {
         proc(window);

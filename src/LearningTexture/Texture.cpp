@@ -5,7 +5,7 @@
 #include<GLFW/glfw3.h>
 #include<iostream>
 
-#include "TEXTURES.h"
+#include "Shader.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glfwMakeContextCurrent(window);
@@ -68,7 +68,7 @@ int main() {
     glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,8*sizeof(float),(void*)(6*sizeof(float)));
     glEnableVertexAttribArray(2);
 
-    TEXTURES shader("/home/Gal/Projects/learnopengl/src/LearningTexture/vertex","/home/Gal/Projects/learnopengl/src/LearningTexture/fragment");
+    Shader shader("/home/Gal/Projects/learnopengl/src/LearningTexture/vertex","/home/Gal/Projects/learnopengl/src/LearningTexture/fragment");
 
     stbi_set_flip_vertically_on_load(true);
     //ID Like Shader Construct
