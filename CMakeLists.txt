@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(glm REQUIRED)
 
 add_executable(hello_window
         src/Windows.cpp
@@ -194,4 +195,36 @@ target_include_directories(Texture_Homework_2 PRIVATE
 target_link_libraries(Texture_Homework_2 PRIVATE
         glfw
         OpenGL::GL
+)
+
+add_executable(Transforming_Learning
+        src/Transform_Learning/Transforming_Learning.cpp
+        third_party/glad/src/glad.c
+)
+target_include_directories(Transforming_Learning PRIVATE
+        src/Transform_Learning
+        third_party/glad/include
+        third_party/stb
+        src/Shader
+)
+target_link_libraries(Transforming_Learning PRIVATE
+        glfw
+        OpenGL::GL
+        glm::glm
+)
+
+add_executable(Trans
+        src/Homework/Homework_Transform/Trans.cpp
+        third_party/glad/src/glad.c
+)
+target_include_directories(Trans PRIVATE
+        src/Homework/Homework_Transform
+        third_party/glad/include
+        third_party/stb
+        src/Shader
+)
+target_link_libraries(Trans PRIVATE
+        glfw
+        OpenGL::GL
+        glm::glm
 )

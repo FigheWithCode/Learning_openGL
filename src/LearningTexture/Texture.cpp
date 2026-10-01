@@ -111,7 +111,7 @@ int main() {
     }
 
     stbi_image_free(data);//free memorry
-    shader.use();
+    shader.Use();
     glUniform1i(glGetUniformLocation(shader.ID,"texture1"),0);//手动设置
     shader.setInt("texture2",1);
 
@@ -120,7 +120,7 @@ int main() {
         glClearColor(.5f,.7f,.9f,1.f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        shader.use();
+        shader.Use();
         glBindVertexArray(VAO);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,texture1);
